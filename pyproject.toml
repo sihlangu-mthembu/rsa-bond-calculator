@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rsabond"
+version = "0.1.0"
+description = "RSA government bond calculator: coupon schedules, accrued interest, price and yield"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Sihlangu Mthembu" }]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[project.scripts]
+rsabond = "rsabond.cli:main"
+
+[tool.setuptools]
+packages = ["rsabond"]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
